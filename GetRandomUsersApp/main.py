@@ -13,6 +13,8 @@ for user in user_obj.results:
 	first_name_label.pack()
 	last_name_label = tk.Label(root, text="Last name: " + user.name.last)
 	last_name_label.pack()
+	country_label = tk.Label(root, text="Country: " + user.location.country)
+	country_label.pack()
 
 json_label = tk.Label(root, text=user_response.content, wraplength=500, justify="center")
 json_label.pack()
