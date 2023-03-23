@@ -1,6 +1,10 @@
 import tkinter as tk
+import tkinter.messagebox as messagebox
 from network import get_response
 from user_transformer import parse_user
+
+def on_show_click(display_text):
+	messagebox.showinfo( "JSON content", display_text)
 
 root = tk.Tk()
 root.geometry("500x500")
@@ -20,10 +24,9 @@ for user in user_obj.results:
 	last_name_label.pack()
 	country_field_label = tk.Label(root, text="Country: " + user.location.country)
 	country_field_label.pack()
+  
 
-
-
-json_label = tk.Label(root, text=user_response.content, wraplength=500, justify="center")
-json_label.pack()
+show_button = tk.Button(root, text="Show json", command=lambda display_text=user_response.content: on_show_click(display_text))
+show_button.pack()
 
 root.mainloop()
