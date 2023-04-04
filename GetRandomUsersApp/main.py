@@ -8,6 +8,7 @@ def on_show_click(display_text):
 	messagebox.showinfo( "JSON content", display_text)
 
 
+
 root = tk.Tk()
 root.geometry("500x500")
 
@@ -29,6 +30,5 @@ for user in user_obj.results:
 	last_name_label.pack()
 	country_field_label = tk.Label(root, text="Country: " + user.location.country)
 	country_field_label.pack()
-
 
 root.mainloop()
